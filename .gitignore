@@ -25,8 +25,7 @@ MANIFEST
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-/media
-/static
+second_project/media/movies/thumbnails/
 
 # Virtual Environment
 .pythonlibs/
@@ -51,8 +50,6 @@ Thumbs.db
 .config/
 .cache/
 .pythonlibs/
-uv.lock
-pyproject.toml
 
 # Local development
 __pycache__/
