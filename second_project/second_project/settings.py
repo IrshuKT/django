@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-s_0ymk-aiu56ho5fe8j5sf&rahpli+3v%^nfzm=rv%lb^8m1oo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CSRF_TRUSTED_ORIGINS = ['https://*.replit.dev', 'https://*.repl.co']
 
 ROOT_URLCONF = 'second_project.urls'
 
@@ -75,13 +77,8 @@ WSGI_APPLICATION = 'second_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db'
-        '.backends.postgresql',
-        'NAME': 'django_db',
-        'HOST':'localhost',
-        'USER':'irshad',
-        'PASSWORD':'123',
-        'PORT':'5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
