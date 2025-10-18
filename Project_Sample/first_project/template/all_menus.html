@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Menus</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        nav { background: #f4f4f4; padding: 10px; }
+        ul.menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        ul.menu li {
+            display: inline;
+        }
+        ul.menu li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        ul.menu li a:hover {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="menu" style="align-items: end;">
+            <li><a href="{% url 'mainpage' %}">Home</a></li>
+            <li><a href="{% url 'student' %}">Students</a></li>
+            <li><a href="{% url 'teacher' %}">Teachers</a></li>
+            
+        </ul>
+    </nav>
+</body>
+</html>

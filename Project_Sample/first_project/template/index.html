@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABC School</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2d6cdf;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        h1 {
+            margin: 0;
+        }
+        .features {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .feature {
+            flex: 1 1 200px;
+            background: #eaf0fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Welcome to ABC School</h1>
+        <p>Empowering Students for a Brighter Future</p>
+    </header>
+    <div style="margin-bottom: 20px; align-items: end;">
+          {% include 'all_menus.html' %}
+    </div>
+    <main>
+      
+        <section>
+            <h2>About Us</h2>
+            <p>
+                ABC School is dedicated to providing quality education and fostering a nurturing environment for students to grow and excel.
+            </p>
+        </section>
+        <section class="features">
+            <div class="feature">
+                <h3>Academic Excellence</h3>
+                <p>Experienced teachers and modern curriculum.</p>
+            </div>
+            <div class="feature">
+                <h3>Sports & Activities</h3>
+                <p>Wide range of extracurricular programs.</p>
+            </div>
+            <div class="feature">
+                <h3>Safe Campus</h3>
+                <p>Secure and welcoming environment for all.</p>
+            </div>
+        </section>
+    </main>
+    {% include 'all_footer.html' %}
+</body>
+</html>
