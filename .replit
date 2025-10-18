@@ -34,10 +34,6 @@ outputType = "webview"
 localPort = 5000
 externalPort = 80
 
-[[ports]]
-localPort = 35315
-externalPort = 3000
-
 [deployment]
 deploymentTarget = "autoscale"
 run = ["bash", "-c", "cd second_project && DEBUG=False gunicorn --bind=0.0.0.0:5000 --reuse-port second_project.wsgi:application"]
