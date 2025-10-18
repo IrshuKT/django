@@ -120,3 +120,8 @@ Media	Django File Uploads (MEDIA_URL / MEDIA_ROOT)
 Irshad
 💼 Django Developer | Python Enthusiast
 📧 irshad2934@gmail.com
+
+
+📝 License
+
+This project is open-source and available under the MIT License.

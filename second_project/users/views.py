@@ -26,24 +26,20 @@ def signup(request):
     return render(request, 'user_signup.html',{'user':user,'error_message':error_message})
 
 
+
 def signin(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        print("Trying login with:", username, password)
 
         user = authenticate(request, username=username, password=password)
-        print("Authenticate returned:", user)
-
         if user is not None:
             login(request, user)
-            print("✅ Login successful")
-            return redirect('list')
+            messages.success(request, f"Welcome back, {username} 👋")
+            return redirect('index')
         else:
-            print("❌ Invalid login")
-            messages.error(request, "Invalid username or password.")
-            return render(request, 'user_signin.html')  # Show error on same page
-
+            messages.error(request, "Invalid username or password. Please try again.")
+            return redirect('signin')  # refresh the same page with error
     return render(request, 'user_signin.html')
 
 def signout(request):
