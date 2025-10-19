@@ -1,6 +1,7 @@
 from django.shortcuts import render ,redirect
 from . models import Movie,Director,CensorInfo,Actor
 from . forms import MovieForm,DirectorForm,CensorInfoForm,ActorForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -8,7 +9,7 @@ def index(request):
     movies_val = Movie.objects.all()
     return render(request,'index.html',{'values':movies_val})
 
-
+@login_required(login_url='/signin/')
 def create(request):
     if request.POST:
        movieInfo = MovieForm(request.POST, request.FILES)
@@ -19,7 +20,7 @@ def create(request):
         movieInfo = MovieForm()
     return render(request,'create.html',{'frm':movieInfo})
 
-
+@login_required(login_url='/signin/')
 def list(request):
     movies_value = Movie.objects.all()
     return render(request,'list.html',{'movies':movies_value})
